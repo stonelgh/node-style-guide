@@ -264,6 +264,21 @@ if (veryLongFunctionNameA(
 }
 ```
 
+### Binary and Ternary Operators
+Always put the operator on the preceding line.
+```
+var x = a ? b : c;  // All on one line if it will fit.
+
+// Indentation +4 is OK.
+var y = a ?
+    longButSimpleOperandB : longButSimpleOperandC;
+
+// Indenting to the line position of the first operand is also OK.
+var z = a ?
+        moreComplicatedB :
+        moreComplicatedC;
+```
+
 ### Naming Conventions
 
 ### Use lowerCamelCase for variables, properties and function names
@@ -341,8 +356,8 @@ keys when your interpreter complains:
 ```js
 var a = ['hello', 'world'];
 var b = {
-  good: 'code',
-  'is generally': 'pretty',
+    good: 'code',
+    'is generally': 'pretty',
 };
 ```
 
@@ -350,11 +365,41 @@ var b = {
 
 ```js
 var a = [
-  'hello', 'world'
+    'hello', 'world'
 ];
 var b = {"good": 'code'
         , is generally: 'pretty'
         };
+```
+## Comments
+### Use JSDoc
+All files, classes, methods and properties should be documented with JSDoc comments with the appropriate tags and types. Textual descriptions for properties, methods, method parameters and method return values should be included unless obvious from the property, method, or parameter name.
+
+Inline comments should be of the // variety.
+
+Complete sentences are recommended but not required. Complete sentences should use appropriate capitalization and punctuation.
+### Comment Syntax 
+```
+/**
+ * A JSDoc comment should begin with a slash and 2 asterisks.
+ * Inline tags should be enclosed in braces like {@code this}.
+ * @desc Block tags should always start on their own line.
+ */
+```
+### JSDoc Indentation
+
+If you have to line break a block tag, you should treat this as breaking a code statement and indent it four spaces.
+```
+/**
+ * Illustrates line wrapping for long param/return descriptions.
+ * @param {string} foo This is a param with a description too long to fit in
+ *     one line.
+ * @return {number} This returns something that has a description too long to
+ *     fit in one line.
+ */
+project.MyClass.prototype.method = function(foo) {
+    return 5;
+};
 ```
 
 ## Conditionals
@@ -384,24 +429,6 @@ if (a == '') {
 ```
 
 [comparisonoperators]: https://developer.mozilla.org/en/JavaScript/Reference/Operators/Comparison_Operators
-
-### Use multi-line ternary operator
-
-The ternary operator should not be used on a single line. Split it up into multiple lines instead.
-
-*Right:*
-
-```js
-var foo = (a === b)
-  ? 1
-  : 2;
-```
-
-*Wrong:*
-
-```js
-var foo = (a === b) ? 1 : 2;
-```
 
 ### Use descriptive conditions
 
@@ -664,3 +691,7 @@ if (a.empty()) {
   console.log('losing');
 }
 ```
+[Felix's Node.js Style Guide](https://github.com/felixge/node-style-guide)
+[Google Javascript style guide](https://google.github.io/styleguide/javascriptguide.xml)
+[Google C++ style guide](http://google.github.io/styleguide/cppguide.html)
+[Crockford's Code Conventions for the JavaScript Programming Language](http://javascript.crockford.com/code.html)
