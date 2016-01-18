@@ -168,6 +168,40 @@ while (keys.length) {
 
 [crockfordconvention]: http://javascript.crockford.com/code.html
 
+### Array and Object Initializers
+Single-line array and object initializers are allowed when they fit on a line:
+```
+var arr = [1, 2, 3];  // No space after [ or before ].
+var obj = {a: 1, b: 2, c: 3};  // No space after { or before }.
+```
+Multiline array initializers and object initializers are indented 4 spaces, with the braces on their own line, just like blocks.
+```
+// Object initializer.
+var inset = {
+  top: 10,
+  right: 20,
+  bottom: 15,
+  left: 12
+};
+
+// Array initializer.
+this.rows_ = [
+  '"Slartibartfast" <fjordmaster@magrathea.com>',
+  '"Zaphod Beeblebrox" <theprez@universe.gov>',
+  '"Ford Prefect" <ford@theguide.com>',
+  '"Arthur Dent" <has.no.tea@gmail.com>',
+  '"Marvin the Paranoid Android" <marv@googlemail.com>',
+  'the.mice@magrathea.com'
+];
+
+// Used in a method call.
+goog.dom.createDom(goog.dom.TagName.DIV, {
+  id: 'foo',
+  className: 'some-css-class',
+  style: 'display:none'
+}, 'Hello, world!');
+```
+
 ### Function Declarations
 There should be one space between the ')' and the '{' that begins the statement body.
 
@@ -179,6 +213,56 @@ There is never a space between the parentheses and the parameters.
 
 The open curly brace is always on the end of the last line of the function declaration, not the start of the next line.
 
+### Function Calls
+When possible, all function arguments should be listed on the same line. If doing so would exceed the 100-column limit, the arguments must be line-wrapped in a readable way. To save space, you may wrap as close to 100 as possible, or put each argument on its own line to enhance readability. The indentation may be either four spaces, or aligned to the parenthesis. Put one blank line between the function declaration and the first statement if they share the same indentation. Below are the most common patterns for argument wrapping:
+```
+// Four-space, wrap at 100.  Works with very long function names, survives
+// renaming without reindenting, low on space.
+goog.foo.bar.doThingThatIsVeryDifficultToExplain = function(
+    veryDescriptiveArgumentNumberOne, veryDescriptiveArgumentTwo,
+    tableModelEventHandlerProxy, artichokeDescriptorAdapterIterator) {
+    
+    // ...
+};
+
+// Four-space, one argument per line.  Works with long function names,
+// survives renaming, and emphasizes each argument.
+goog.foo.bar.doThingThatIsVeryDifficultToExplain = function(
+    veryDescriptiveArgumentNumberOne,
+    veryDescriptiveArgumentTwo,
+    tableModelEventHandlerProxy,
+    artichokeDescriptorAdapterIterator) {
+    
+    // ...
+};
+
+// Parenthesis-aligned indentation, wrap at 100.  Visually groups arguments,
+// low on space.
+function foo(veryDescriptiveArgumentNumberOne, veryDescriptiveArgumentTwo,
+             tableModelEventHandlerProxy, artichokeDescriptorAdapterIterator) {
+    // ...
+}
+
+// Parenthesis-aligned, one argument per line.  Emphasizes each
+// individual argument.
+function bar(veryDescriptiveArgumentNumberOne,
+             veryDescriptiveArgumentTwo,
+             tableModelEventHandlerProxy,
+             artichokeDescriptorAdapterIterator) {
+  // ...
+}
+```
+When the function call is itself indented, you're free to start the 4-space indent relative to the beginning of the original statement or relative to the beginning of the current function call. The following are all acceptable indentation styles.
+```
+if (veryLongFunctionNameA(
+        veryLongArgumentName) ||
+    veryLongFunctionNameB(
+    veryLongArgumentName)) {
+  veryLongFunctionNameC(veryLongFunctionNameD(
+      veryLongFunctioNameE(
+          veryLongFunctionNameF)));
+}
+```
 
 ### Naming Conventions
 
