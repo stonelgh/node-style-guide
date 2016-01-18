@@ -18,11 +18,11 @@ according to your preferences.
 ## Table of contents
 
 ### Formatting
-* [2 Spaces for indentation](#2-spaces-for-indentation)
+* [4 Spaces for indentation](#4-spaces-for-indentation)
 * [Newlines](#newlines)
 * [No trailing whitespace](#no-trailing-whitespace)
 * [Use Semicolons](#use-semicolons)
-* [80 characters per line](#80-characters-per-line)
+* [100 characters per line](#100-characters-per-line)
 * [Use single quotes](#use-single-quotes)
 * [Opening braces go on the same line](#opening-braces-go-on-the-same-line)
 * [Declare one variable per var statement](#declare-one-variable-per-var-statement)
@@ -59,37 +59,41 @@ according to your preferences.
 ## Formatting
 
 
-### 2 Spaces for indentation
-
-Use 2 spaces for indenting your code and swear an oath to never mix tabs and
+### 4 Spaces for indentation
+Use 4 spaces for indenting your code and swear an oath to never mix tabs and
 spaces - a special kind of hell is awaiting you otherwise.
+
+### Whitespace
+A blank space should not be used between a function value and its invoking '('.
+
+No space should separate a unary operator and its operand except when the operator is a word such as typeof.
+
+All binary operators should be separated from their operands by a space on each side except '.' and '(' and '['.
+
+Every ',' should be followed by a space or a line break.
+
+Each ';' in the control part of a for statement should be followed with a space.
 
 ### Newlines
 
-Use UNIX-style newlines (`\n`), and a newline character as the last character
-of a file. Windows-style newlines (`\r\n`) are forbidden inside any repository.
+Use UNIX-style newlines (`\n`). Windows-style newlines (`\r\n`) are forbidden inside any repository.
+
+Use newlines to group logically related pieces of code.
+
+No newlines at the end of a file.
+
+Each ';' at the end of a statement should be followed with a line break.
 
 ### No trailing whitespace
 
-Just like you brush your teeth after every meal, you clean up any trailing
-whitespace in your JS files before committing. Otherwise the rotten smell of
-careless neglect will eventually drive away contributors and/or co-workers.
-
 ### Use Semicolons
+Put a ; semicolon at the end of every simple statement.
 
-According to [scientific research][hnsemicolons], the usage of semicolons is
-a core value of our community. Consider the points of [the opposition][], but
-be a traditionalist when it comes to abusing error correction mechanisms for
-cheap syntactic pleasures.
+### 100 characters per line
 
-[the opposition]: http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding
-[hnsemicolons]: http://news.ycombinator.com/item?id=1547647
+Limit your lines to 100 characters.
 
-### 80 characters per line
-
-Limit your lines to 80 characters. Yes, screens have gotten much bigger over the
-last few years, but your brain has not. Use the additional room for split screen,
-your editor supports that, right?
+When a statement will not fit nicely on a single line, it may be necessary to break it. It is best to break after a { left brace, [ left bracket, ( left paren, , comma, or before a . period, ? question mark, or : colon. If such a break is not feasible, then break after an operator.
 
 ### Use single quotes
 
@@ -130,12 +134,10 @@ if (true)
 
 Also, notice the use of whitespace before and after the condition statement.
 
-### Declare one variable per var statement
+### Declare variables
+All variables should be declared before used.
 
-Declare one variable per var statement, it makes it easier to re-order the
-lines. However, ignore [Crockford][crockfordconvention] when it comes to
-declaring variables deeper inside a function, just put the declarations wherever
-they make sense.
+Declare variables close to their usages.
 
 *Right:*
 
@@ -153,10 +155,10 @@ while (keys.length) {
 *Wrong:*
 
 ```js
-var keys = ['foo', 'bar'],
-    values = [23, 42],
-    object = {},
-    key;
+var keys = ['foo', 'bar'];
+var values = [23, 42];
+var object = {};
+var key;
 
 while (keys.length) {
   key = keys.pop();
@@ -165,6 +167,18 @@ while (keys.length) {
 ```
 
 [crockfordconvention]: http://javascript.crockford.com/code.html
+
+### Function Declarations
+There should be one space between the ')' and the '{' that begins the statement body.
+
+No space should be put between the word function and the '(' in an anonymous function definition.
+
+No space should be put between the function name and the '(' in a function definition or call.
+
+There is never a space between the parentheses and the parameters.
+
+The open curly brace is always on the end of the last line of the function declaration, not the start of the next line.
+
 
 ### Naming Conventions
 
