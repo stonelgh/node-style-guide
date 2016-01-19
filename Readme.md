@@ -18,19 +18,30 @@ according to your preferences.
 ## Table of contents
 
 ### Formatting
+* [100 characters per line](#100 characters per line)
 * [4 Spaces for indentation](#4-spaces-for-indentation)
+* [Whitespace Usage](#Whitespace-Usage)
 * [Newlines](#newlines)
-* [No trailing whitespace](#no-trailing-whitespace)
 * [Use Semicolons](#use-semicolons)
-* [100 characters per line](#100-characters-per-line)
-* [Use single quotes](#use-single-quotes)
+* [Use single quotes](#Use-single-quotes)
 * [Opening braces go on the same line](#opening-braces-go-on-the-same-line)
-* [Declare one variable per var statement](#declare-one-variable-per-var-statement)
+* [Ternary Operator](#Ternary-Operator)
+* [Array and Object Initializers](#Array-and-Object-Initializers)
+* [else/catch/finally/while(in do...while)](#else/catch/finally/while(in do...while))
+* [Conditionals](#Conditionals)
+* [Switch Statements](#Switch-Statements)
+* [Loops](#Loops)
+* [Declare variables](#Declare-variables)
+* [Function Declarations](#Function-Declarations)
+* [Function Calls](#Function-Calls)
 
 ### Naming Conventions
+* [Properties and methods](#Properties and methods)
+* [Method and function parameter](#Method and function parameter)
 * [Use lowerCamelCase for variables, properties and function names](#use-lowercamelcase-for-variables-properties-and-function-names)
 * [Use UpperCamelCase for class names](#use-uppercamelcase-for-class-names)
 * [Use UPPERCASE for Constants](#use-uppercase-for-constants)
+* [Use lowercase for Filenames](#use-lowercase-for-Filenames)
 
 ### Variables
 * [Object / Array creation](#object--array-creation)
@@ -46,15 +57,22 @@ according to your preferences.
 * [Name your closures](#name-your-closures)
 * [No nested closures](#no-nested-closures)
 * [Method chaining](#method-chaining)
+* [Callbacks](#Callbacks)
 
 ### Comments
-* [Use slashes for comments](#use-slashes-for-comments)
+* [Use JSDoc](#use-JSDoc)
+* [Comment Syntax](#Comment-Syntax)
+* [JSDoc Indentation](#JSDoc-Indentation)
 
 ### Miscellaneous
 * [Object.freeze, Object.preventExtensions, Object.seal, with, eval](#objectfreeze-objectpreventextensions-objectseal-with-eval)
 * [Requires At Top](#requires-at-top)
 * [Getters and setters](#getters-and-setters)
 * [Do not extend built-in prototypes](#do-not-extend-built-in-prototypes)
+* 
+### [Be Consistent](#Be-Consistent)
+
+### [References](#References)
 
 ## Formatting
 
@@ -128,12 +146,20 @@ if(true)
 }
 ```
 
-### Declare variables
-All variables should be declared before used.
+### Ternary Operator
+Always put the operator on the preceding line.
+```
+var x = a ? b : c;  // All on one line if it will fit.
 
-Declare variables close to their usage.
+// Indentation +4 is OK.
+var y = a ?
+    longButSimpleOperandB : longButSimpleOperandC;
 
-[crockfordconvention]: http://javascript.crockford.com/code.html
+// Indenting to the line position of the first operand is also OK.
+var z = a ?
+        moreComplicatedB :
+        moreComplicatedC;
+```
 
 ### Array and Object Initializers
 Single-line array and object initializers are allowed when they fit on a line:
@@ -244,6 +270,14 @@ Empty loop bodies should use {} or continue, but not a single semicolon.
 for(int i = 0; i < kSomeNumber; ++i) {}  // Good - empty body.
 while(condition) continue;  // Good - continue indicates no logic.
 ```
+
+### Declare variables
+All variables should be declared before used.
+
+Declare variables close to their usage.
+
+[crockfordconvention]: http://javascript.crockford.com/code.html
+
 ### Function Declarations
 There should be one space between the ')' and the '{' that begins the statement body.
 
@@ -306,28 +340,13 @@ if (veryLongFunctionNameA(
 }
 ```
 
-### Binary and Ternary Operators
-Always put the operator on the preceding line.
-```
-var x = a ? b : c;  // All on one line if it will fit.
-
-// Indentation +4 is OK.
-var y = a ?
-    longButSimpleOperandB : longButSimpleOperandC;
-
-// Indenting to the line position of the first operand is also OK.
-var z = a ?
-        moreComplicatedB :
-        moreComplicatedC;
-```
-
 ## Naming Conventions
 In general, use functionNamesLikeThis, variableNamesLikeThis, ClassNamesLikeThis, EnumNamesLikeThis, methodNamesLikeThis, CONSTANT_VALUES_LIKE_THIS, foo.namespaceNamesLikeThis.bar, and filenameslikethis.js. 
 
 ### Properties and methods
+Private properties and methods should be named with a precedent underscore.
 
-    Private properties and methods should be named with a precedent underscore.
-    Protected properties and methods should be named without a precedent underscore (like public ones).
+Protected properties and methods should be named without a precedent underscore (like public ones).
 
 ### Method and function parameter
 
@@ -399,7 +418,7 @@ File.fullPermissions = 0777;
 ```
 
 [const]: https://developer.mozilla.org/en/JavaScript/Reference/Statements/const
-### Filenames
+### Use lowercase for filenames
 
 Filenames should be all lowercase in order to avoid confusion on case-sensitive platforms. Filenames should end in `.js`, and should contain no punctuation except for `-` or `_` (prefer `-` to `_`).
 
@@ -645,7 +664,7 @@ Crazy shit that you will probably never need. Stay away from it.
 
 Always put requires at top of file to clearly illustrate a file's dependencies. Besides giving an overview for others at a quick glance of dependencies and possible memory impact, it allows one to determine if they need a package.json file should they choose to use the file elsewhere.
 
-### Getters and setters
+### `?`Getters and setters
 
 Do not use setters, they cause more problems for people who try to use your
 software than they can solve.
@@ -681,7 +700,7 @@ if (a.empty()) {
   console.log('losing');
 }
 ```
-### BE CONSISTENT.
+## Be Consistent
 
 If you're editing code, take a few minutes to look at the code around you and determine its style.
 
