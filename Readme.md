@@ -69,7 +69,7 @@ according to your preferences.
 * [Requires At Top](#requires-at-top)
 * [Getters and setters](#getters-and-setters)
 * [Do not extend built-in prototypes](#do-not-extend-built-in-prototypes)
-* 
+
 ### [Be Consistent](#Be-Consistent)
 
 ### [References](#References)
@@ -422,37 +422,6 @@ File.fullPermissions = 0777;
 
 Filenames should be all lowercase in order to avoid confusion on case-sensitive platforms. Filenames should end in `.js`, and should contain no punctuation except for `-` or `_` (prefer `-` to `_`).
 
-## Comments
-### Use JSDoc
-All files, classes, methods and properties should be documented with JSDoc comments with the appropriate tags and types. Textual descriptions for properties, methods, method parameters and method return values should be included unless obvious from the property, method, or parameter name.
-
-Inline comments should be of the // variety.
-
-Complete sentences are recommended but not required. Complete sentences should use appropriate capitalization and punctuation.
-### Comment Syntax 
-```
-/**
- * A JSDoc comment should begin with a slash and 2 asterisks.
- * Inline tags should be enclosed in braces like {@code this}.
- * @desc Block tags should always start on their own line.
- */
-```
-### JSDoc Indentation
-
-If you have to line break a block tag, you should treat this as breaking a code statement and indent it four spaces.
-```
-/**
- * Illustrates line wrapping for long param/return descriptions.
- * @param {string} foo This is a param with a description too long to fit in
- *     one line.
- * @return {number} This returns something that has a description too long to
- *     fit in one line.
- */
-project.MyClass.prototype.method = function(foo) {
-    return 5;
-};
-```
-
 ## Conditionals
 
 ### Use the === operator
@@ -653,6 +622,37 @@ User.findOne({ name: 'foo' }).populate('bar')
 To maintain good readability, the callback levels should generally be limited to 2.
 
 Node.js is asynchronous. It often results in multi-level callbacks in an asynchronous context. [Promises](https://promisesaplus.com/) or similar techniques should be adopted in case over 2 levels callbacks are required.
+
+## Comments
+### Use JSDoc
+All files, classes, methods and properties should be documented with JSDoc comments with the appropriate tags and types. Textual descriptions for properties, methods, method parameters and method return values should be included unless obvious from the property, method, or parameter name.
+
+Inline comments should be of the // variety.
+
+Complete sentences are recommended but not required. Complete sentences should use appropriate capitalization and punctuation.
+### Comment Syntax 
+```
+/**
+ * A JSDoc comment should begin with a slash and 2 asterisks.
+ * Inline tags should be enclosed in braces like {@code this}.
+ * @desc Block tags should always start on their own line.
+ */
+```
+### JSDoc Indentation
+
+If you have to line break a block tag, you should treat this as breaking a code statement and indent it four spaces.
+```
+/**
+ * Illustrates line wrapping for long param/return descriptions.
+ * @param {string} foo This is a param with a description too long to fit in
+ *     one line.
+ * @return {number} This returns something that has a description too long to
+ *     fit in one line.
+ */
+project.MyClass.prototype.method = function(foo) {
+    return 5;
+};
+```
 
 ## Miscellaneous
 
