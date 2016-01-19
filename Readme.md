@@ -630,52 +630,10 @@ User.findOne({ name: 'foo' }).populate('bar')
     return true;
   });
 ````
+### Callbacks
+To maintain good readability, the callback levels should generally be limited to 2.
 
-## Comments
-
-### Use slashes for comments
-
-Use slashes for both single line and multi line comments. Try to write
-comments that explain higher level mechanisms or clarify difficult
-segments of your code. Don't use comments to restate trivial things.
-
-*Right:*
-
-```js
-// 'ID_SOMETHING=VALUE' -> ['ID_SOMETHING=VALUE', 'SOMETHING', 'VALUE']
-var matches = item.match(/ID_([^\n]+)=([^\n]+)/));
-
-// This function has a nasty side effect where a failure to increment a
-// redis counter used for statistics will cause an exception. This needs
-// to be fixed in a later iteration.
-function loadUser(id, cb) {
-  // ...
-}
-
-var isSessionValid = (session.expires < Date.now());
-if (isSessionValid) {
-  // ...
-}
-```
-
-*Wrong:*
-
-```js
-// Execute a regex
-var matches = item.match(/ID_([^\n]+)=([^\n]+)/);
-
-// Usage: loadUser(5, function() { ... })
-function loadUser(id, cb) {
-  // ...
-}
-
-// Check if the session is valid
-var isSessionValid = (session.expires < Date.now());
-// If the session is valid
-if (isSessionValid) {
-  // ...
-}
-```
+Node.js is asynchronous. It often results in multi-level callbacks in an asynchronous context. [Promises](https://promisesaplus.com/) or similar techniques should be adopted in case over 2 levels callbacks are required.
 
 ## Miscellaneous
 
@@ -727,7 +685,11 @@ if (a.empty()) {
 
 If you're editing code, take a few minutes to look at the code around you and determine its style.
 
+## References
 [Felix's Node.js Style Guide](https://github.com/felixge/node-style-guide)
+
 [Google Javascript style guide](https://google.github.io/styleguide/javascriptguide.xml)
+
 [Google C++ style guide](http://google.github.io/styleguide/cppguide.html)
+
 [Crockford's Code Conventions for the JavaScript Programming Language](http://javascript.crockford.com/code.html)
