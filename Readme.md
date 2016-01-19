@@ -321,8 +321,21 @@ var z = a ?
         moreComplicatedC;
 ```
 
-### Naming Conventions
+## Naming Conventions
 In general, use functionNamesLikeThis, variableNamesLikeThis, ClassNamesLikeThis, EnumNamesLikeThis, methodNamesLikeThis, CONSTANT_VALUES_LIKE_THIS, foo.namespaceNamesLikeThis.bar, and filenameslikethis.js. 
+
+### Properties and methods
+
+    Private properties and methods should be named with a precedent underscore.
+    Protected properties and methods should be named without a precedent underscore (like public ones).
+
+### Method and function parameter
+
+Optional function arguments start with opt_.
+
+Functions that take a variable number of arguments should have the last argument named var_args. You may not refer to var_args in the code; use the arguments array.
+
+Optional and variable arguments can also be specified in @param annotations. Although either convention is acceptable to the compiler, using both together is preferred.
 
 ### Use lowerCamelCase for variables, properties and function names
 
