@@ -60,8 +60,7 @@ according to your preferences.
 
 
 ### 4 Spaces for indentation
-Use 4 spaces for indenting your code and swear an oath to never mix tabs and
-spaces - a special kind of hell is awaiting you otherwise.
+Use 4 spaces for indentation. Tabs are forbidden for such purpose.
 
 ### Whitespace
 A blank space should not be used between a function value and its invoking '('.
@@ -201,7 +200,47 @@ goog.dom.createDom(goog.dom.TagName.DIV, {
   style: 'display:none'
 }, 'Hello, world!');
 ```
+### else/catch/finally/while(in do...while)
+Put else/catch/while(in do...while) on their own line instead of after '}'.
+```
+    if(condition1) {
+        ...
+    }
+    else if(condition2) {
+        ...
+    }
+    else {
+        ...
+    }
 
+    try {
+        ...
+    }
+    catch(err) {
+        ...
+    }
+    finally {
+        ...
+    }
+
+    do {
+        ...
+    }
+    while(condition);
+```
+
+### switch
+case and default clauses have the same identication as swtich.
+```
+    switch(option) {
+    case OPT1:
+        ...
+    case OPT2:
+        ...
+    default:
+        ...
+    }
+```
 ### Function Declarations
 There should be one space between the ')' and the '{' that begins the statement body.
 
@@ -691,6 +730,10 @@ if (a.empty()) {
   console.log('losing');
 }
 ```
+### BE CONSISTENT.
+
+If you're editing code, take a few minutes to look at the code around you and determine its style.
+
 [Felix's Node.js Style Guide](https://github.com/felixge/node-style-guide)
 [Google Javascript style guide](https://google.github.io/styleguide/javascriptguide.xml)
 [Google C++ style guide](http://google.github.io/styleguide/cppguide.html)
