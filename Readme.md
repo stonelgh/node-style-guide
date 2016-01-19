@@ -58,20 +58,31 @@ according to your preferences.
 
 ## Formatting
 
+### 100 characters per line
+
+Limit your lines to 100 characters.
+
+When a statement will not fit nicely on a single line, it may be necessary to break it. It is best to break after a { left brace, [ left bracket, ( left paren, , comma, or before a . period, ? question mark, or : colon. If such a break is not feasible, then break after an operator.
 
 ### 4 Spaces for indentation
-Use 4 spaces for indentation. Tabs are forbidden for such purpose.
+Use 4 spaces for indentation. No tabs.
 
 ### Whitespace
-A blank space should not be used between a function value and its invoking '('.
-
-No space should separate a unary operator and its operand except when the operator is a word such as typeof.
+No space should separate an unary operator and its operand except when the operator is a word such as typeof.
 
 All binary operators should be separated from their operands by a space on each side except '.' and '(' and '['.
+
+No space is allowed around '(' with respect to the previous rules.
+
+No space is allowed before ')' and ']' unless they are on a separate line;
+
+Every '{' should be preceded by a space.
 
 Every ',' should be followed by a space or a line break.
 
 Each ';' in the control part of a for statement should be followed with a space.
+
+No trailing spaces are allowed at the end of a line.
 
 ### Newlines
 
@@ -83,16 +94,8 @@ No newlines at the end of a file.
 
 Each ';' at the end of a statement should be followed with a line break.
 
-### No trailing whitespace
-
 ### Use Semicolons
 Put a ; semicolon at the end of every simple statement.
-
-### 100 characters per line
-
-Limit your lines to 100 characters.
-
-When a statement will not fit nicely on a single line, it may be necessary to break it. It is best to break after a { left brace, [ left bracket, ( left paren, , comma, or before a . period, ? question mark, or : colon. If such a break is not feasible, then break after an operator.
 
 ### Use single quotes
 
