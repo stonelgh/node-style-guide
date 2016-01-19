@@ -170,6 +170,17 @@ goog.dom.createDom(goog.dom.TagName.DIV, {
     style: 'display:none'
 }, 'Hello, world!');
 ```
+Only quote keys when your interpreter complains:
+
+*Right:*
+
+```js
+var b = {
+    good: 'code',
+    'is generally': 'pretty',
+};
+```
+
 ### else/catch/finally/while(in do...while)
 Put else/catch/finally/while(in do...while) on their own line instead of after '}'.
 ```
@@ -311,6 +322,7 @@ var z = a ?
 ```
 
 ### Naming Conventions
+In general, use functionNamesLikeThis, variableNamesLikeThis, ClassNamesLikeThis, EnumNamesLikeThis, methodNamesLikeThis, CONSTANT_VALUES_LIKE_THIS, foo.namespaceNamesLikeThis.bar, and filenameslikethis.js. 
 
 ### Use lowerCamelCase for variables, properties and function names
 
@@ -348,7 +360,7 @@ function bank_Account() {
 }
 ```
 
-## Use UPPERCASE for Constants
+### Use UPPERCASE for Constants
 
 Constants should be declared as regular variables or static class properties,
 using all uppercase letters.
@@ -374,34 +386,10 @@ File.fullPermissions = 0777;
 ```
 
 [const]: https://developer.mozilla.org/en/JavaScript/Reference/Statements/const
+### Filenames
 
-## Variables
+Filenames should be all lowercase in order to avoid confusion on case-sensitive platforms. Filenames should end in `.js`, and should contain no punctuation except for `-` or `_` (prefer `-` to `_`).
 
-### Object / Array creation
-
-Use trailing commas and put *short* declarations on a single line. Only quote
-keys when your interpreter complains:
-
-*Right:*
-
-```js
-var a = ['hello', 'world'];
-var b = {
-    good: 'code',
-    'is generally': 'pretty',
-};
-```
-
-*Wrong:*
-
-```js
-var a = [
-    'hello', 'world'
-];
-var b = {"good": 'code'
-        , is generally: 'pretty'
-        };
-```
 ## Comments
 ### Use JSDoc
 All files, classes, methods and properties should be documented with JSDoc comments with the appropriate tags and types. Textual descriptions for properties, methods, method parameters and method return values should be included unless obvious from the property, method, or parameter name.
