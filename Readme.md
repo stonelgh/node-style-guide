@@ -62,13 +62,13 @@ according to your preferences.
 
 Limit your lines to 100 characters.
 
-When a statement will not fit nicely on a single line, it may be necessary to break it. It is best to break after a { left brace, [ left bracket, ( left paren, , comma, or before a . period, ? question mark, or : colon. If such a break is not feasible, then break after an operator.
+When a statement will not fit nicely on a single line, it may be necessary to break it. It is best to break after a `{` left brace, `[`, `(`, `,`, or before a `.`, `?`, or `:`. If such a break is not feasible, then break after an operator.
 
 ### 4 Spaces for indentation
 Use 4 spaces for indentation. No tabs.
 
 ### Whitespace
-No space should separate an unary operator and its operand except when the operator is a word such as typeof.
+No space should separate an unary operator and its operand except when the operator is a word such as `typeof`.
 
 All binary operators should be separated from their operands by a space on each side except '.' and '(' and '['.
 
@@ -95,22 +95,16 @@ No newlines at the end of a file.
 Each ';' at the end of a statement should be followed with a line break.
 
 ### Use Semicolons
-Put a ; semicolon at the end of every simple statement.
+Put a `;` semicolon at the end of every simple statement.
 
 ### Use single quotes
 
-Use single quotes, unless you are writing JSON.
+Use single quotes `'`.
 
 *Right:*
 
 ```js
 var foo = 'bar';
-```
-
-*Wrong:*
-
-```js
-var foo = "bar";
 ```
 
 ### Opening braces go on the same line
@@ -151,31 +145,31 @@ Multiline array initializers and object initializers are indented 4 spaces, with
 ```
 // Object initializer.
 var inset = {
-  top: 10,
-  right: 20,
-  bottom: 15,
-  left: 12
+    top: 10,
+    right: 20,
+    bottom: 15,
+    left: 12
 };
 
 // Array initializer.
 this.rows_ = [
-  '"Slartibartfast" <fjordmaster@magrathea.com>',
-  '"Zaphod Beeblebrox" <theprez@universe.gov>',
-  '"Ford Prefect" <ford@theguide.com>',
-  '"Arthur Dent" <has.no.tea@gmail.com>',
-  '"Marvin the Paranoid Android" <marv@googlemail.com>',
-  'the.mice@magrathea.com'
+    '"Slartibartfast" <fjordmaster@magrathea.com>',
+    '"Zaphod Beeblebrox" <theprez@universe.gov>',
+    '"Ford Prefect" <ford@theguide.com>',
+    '"Arthur Dent" <has.no.tea@gmail.com>',
+    '"Marvin the Paranoid Android" <marv@googlemail.com>',
+    'the.mice@magrathea.com'
 ];
 
 // Used in a method call.
 goog.dom.createDom(goog.dom.TagName.DIV, {
-  id: 'foo',
-  className: 'some-css-class',
-  style: 'display:none'
+    id: 'foo',
+    className: 'some-css-class',
+    style: 'display:none'
 }, 'Hello, world!');
 ```
 ### else/catch/finally/while(in do...while)
-Put else/catch/while(in do...while) on their own line instead of after '}'.
+Put else/catch/finally/while(in do...while) on their own line instead of after '}'.
 ```
     if(condition1) {
         ...
@@ -202,19 +196,6 @@ Put else/catch/while(in do...while) on their own line instead of after '}'.
     }
     while(condition);
 ```
-
-### switch
-case and default clauses have the same identication as swtich.
-```
-    switch(option) {
-    case OPT1:
-        ...
-    case OPT2:
-        ...
-    default:
-        ...
-    }
-```
 ### Conditionals
 Short conditional statements may be written on one line if this enhances readability. You may use this only when the line is brief and the statement does not use the else clause.
 ```
@@ -226,9 +207,22 @@ if(condition) {
     doSomething();
 }
 ```
-### Loops and Switch Statements
-Switch statements should always have a default case. If the default case should never execute, simply throw.
 
+### Switch Statements
+Switch statements should always have a default case. If the default case should never execute, simply throw/assert.
+
+case and default clauses have the same identication as swtich.
+```
+    switch(option) {
+    case OPT1:
+        ...
+    case OPT2:
+        ...
+    default:
+        ...
+    }
+```
+### Loops
 Short loop statements may be written on one line if this enhances readability. You may use this only when the line is brief. Otherwise, curly braces are always required.
 
 Empty loop bodies should use {} or continue, but not a single semicolon.
