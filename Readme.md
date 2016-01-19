@@ -241,6 +241,27 @@ case and default clauses have the same identication as swtich.
         ...
     }
 ```
+### Conditionals
+Short conditional statements may be written on one line if this enhances readability. You may use this only when the line is brief and the statement does not use the else clause.
+```
+if(x == kFoo) return new Foo();
+```
+In other cases, curly braces are required.
+```
+if(condition) {
+    doSomething();
+}
+```
+### Loops and Switch Statements
+Switch statements should always have a default case. If the default case should never execute, simply throw.
+
+Short loop statements may be written on one line if this enhances readability. You may use this only when the line is brief. Otherwise, curly braces are always required.
+
+Empty loop bodies should use {} or continue, but not a single semicolon.
+```
+for(int i = 0; i < kSomeNumber; ++i) {}  // Good - empty body.
+while(condition) continue;  // Good - continue indicates no logic.
+```
 ### Function Declarations
 There should be one space between the ')' and the '{' that begins the statement body.
 
