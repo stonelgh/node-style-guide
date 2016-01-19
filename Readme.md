@@ -141,6 +141,8 @@ Single-line array and object initializers are allowed when they fit on a line:
 var arr = [1, 2, 3];  // No space after [ or before ].
 var obj = {a: 1, b: 2, c: 3};  // No space after { or before }.
 ```
+No space before `,` and `:`. There should be a space after `,` and `:` unless they're the last one in a line.
+
 Multiline array initializers and object initializers are indented 4 spaces, with the braces on their own line, just like blocks.
 ```
 // Object initializer.
@@ -216,8 +218,9 @@ case and default clauses have the same identication as swtich.
     switch(option) {
     case OPT1:
         ...
-    case OPT2:
+    case OPT2:        // No space before colon in a switch case.
         ...
+    case OPT3: break; // Use a space after a colon if there's code after it.
     default:
         ...
     }
