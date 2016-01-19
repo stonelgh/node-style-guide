@@ -72,7 +72,7 @@ No space should separate an unary operator and its operand except when the opera
 
 All binary operators should be separated from their operands by a space on each side except '.' and '(' and '['.
 
-No space is allowed around '(' with respect to the previous rules.
+No space is allowed around '[', and '(' with respect to the previous rules.
 
 No space is allowed before ')' and ']' unless they are on a separate line;
 
@@ -120,53 +120,24 @@ Your opening braces go on the same line as the statement.
 *Right:*
 
 ```js
-if (true) {
-  console.log('winning');
+if(true) {
+    console.log('winning');
 }
 ```
 
 *Wrong:*
 
 ```js
-if (true)
+if(true)
 {
-  console.log('losing');
+    console.log('losing');
 }
 ```
-
-Also, notice the use of whitespace before and after the condition statement.
 
 ### Declare variables
 All variables should be declared before used.
 
-Declare variables close to their usages.
-
-*Right:*
-
-```js
-var keys   = ['foo', 'bar'];
-var values = [23, 42];
-
-var object = {};
-while (keys.length) {
-  var key = keys.pop();
-  object[key] = values.pop();
-}
-```
-
-*Wrong:*
-
-```js
-var keys = ['foo', 'bar'];
-var values = [23, 42];
-var object = {};
-var key;
-
-while (keys.length) {
-  key = keys.pop();
-  object[key] = values.pop();
-}
-```
+Declare variables close to their usage.
 
 [crockfordconvention]: http://javascript.crockford.com/code.html
 
